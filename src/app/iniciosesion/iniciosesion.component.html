@@ -1,0 +1,41 @@
+<app-header></app-header>
+<body>
+  <div
+    class="inicio-sesion container row"
+    style="position: relative; top: 0px"
+    id="content"
+  >
+    <div class="ilustracion-left container">
+      <img src="assets/LoginMedium.png" alt="ImagenInicioSesión" />
+    </div>
+    <div class="datos container">
+      <h1>INICIO DE SESIÓN</h1>
+      <form
+        class="container"
+        id="formulario"
+        name="formulario"
+        action=""
+        method=""
+      >
+        <label for="input-usuario">Nombre de Usuario: </label>
+        <input
+          type="text"
+          name="input-usuario"
+          class="input-usuario"
+          required
+        />
+        <label for="input-contra">Contraseña: </label>
+        <input
+          type="password"
+          name="input-contra"
+          class="input-contra"
+          required
+        />
+        <input type="submit" value="Iniciar Sesión" />
+        <p id="ajaxresponse" class="ajaxresponse" style="display: none"></p>
+      </form>
+      <h2><a href="">Registrarse</a></h2>
+    </div>
+  </div>
+</body>
+<app-footer></app-footer>

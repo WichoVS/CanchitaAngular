@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<body>
+  <div class="Articulos" style="position: relative; top: 0px" id="content">
+    <div class="wrapper">
+      <div class="imagen-categoria row container">
+        <img src="assets/Esports.jpg" alt="FotoEsports" />
+      </div>
+      <div class="row">
+        <section class="Seccion-Titulo container">Esports</section>
+      </div>
+      <div class="galeria-noticias container row">
+        <ng-container *ngFor="let NoticiaE of NoticiasEsports">
+          <div class="noticia-box container">
+            <a href="">
+              <div class="img-box container">
+                <img src="{{NoticiaE.imagen}}" alt="FotoNoticia" />
+              </div>
+              <h2>{{NoticiaE.titulo}}</h2>
+              <p>{{NoticiaE.descripcion}}</p>
+            </a>
+          </div>
+          </ng-container>
+      </div>
+    </div>
+  </div>
+</body>
+
+<app-footer></app-footer>

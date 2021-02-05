@@ -20,7 +20,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
+              "src/icono.ico",
               "src/assets"
             ],
             "styles": [
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Canchita"
+    }
+  },
+  "defaultProject": "Canchita",
+  "cli": {
+    "analytics": false
+  }
 }
