@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { Noticia } from 'src/app/core/interfaces/Clases';
+
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
@@ -23,4 +24,5 @@ export class PrincipalComponent implements OnInit {
   getNoticiasEsports(): void {
     this.NoticiasEsports = this.data.getNoticiasEsports();
   }
+
 }

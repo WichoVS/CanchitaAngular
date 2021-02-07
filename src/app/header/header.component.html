@@ -46,16 +46,25 @@
         <div>
           <a class="container sport_opc" href="">
             <div class="img-user container">
+              <ng-container *ngIf="logged; else elseBlockImg">
+                <img src="{{usuarioLogeado.avatar}}" alt="ImgUsuario" />
+              </ng-container>
+              <ng-template #elseBlockImg>
               <img src="assets/anonimo.png" alt="ImgUsuario" />
+            </ng-template>
             </div>
           </a>
           <div id="menu_divp" style="display: block">
-            <a class="sport_category" href="./InicioSesion">Inicio de Sesión</a>
-            <a class="sport_category" href="/Registro">Registro</a>
-            <a class="sport_category" href="/Perfil">Usuario</a>
-            <a class="sport_category" href="/Logout">Cerrar Sesión</a>
-            <a class="sport_category" href="/CMS">CMS</a>
-            <a class="sport_category" href="/Validacion">Validar CMS</a>
+            <ng-container *ngIf= "usuarioLogeado == null ; else elseBlock">
+              <a class="sport_category" href="./InicioSesion">Inicio de Sesión</a>
+              <a class="sport_category" href="/Registro">Registro</a>
+            </ng-container>
+            <ng-template #elseBlock>
+              <a class="sport_category" href="/Perfil">Usuario</a>
+              <a class="sport_category" href="/Logout">Cerrar Sesión</a>
+              <a class="sport_category" href="/CMS">CMS</a>
+              <a class="sport_category" href="/Validacion">Validar CMS</a>
+            </ng-template>
           </div>
         </div>
       </div>

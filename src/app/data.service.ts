@@ -106,4 +106,7 @@ export class DataService {
   getNoticiasEsports(): Noticia[]{
     return this.NoticiasEsports;
   }
+
+  addNoticiaEsports(){}
+  addNoticiaDeportes(){}
 }

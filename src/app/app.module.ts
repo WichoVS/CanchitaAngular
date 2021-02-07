@@ -11,6 +11,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { MostrarNoticiasComponent } from './mostrar-noticias/mostrar-noticias.component';
 import { MostrarNoticias2Component } from './mostrar-noticias2/mostrar-noticias2.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,12 @@ import { MostrarNoticias2Component } from './mostrar-noticias2/mostrar-noticias2
     RegistroComponent,
     PerfilComponent,
     MostrarNoticiasComponent,
-    MostrarNoticias2Component
+    MostrarNoticias2Component,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
