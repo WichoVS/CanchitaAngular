@@ -15,6 +15,8 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
     this.getNoticiasDeportes();
     this.getNoticiasEsports();
+    this.data.sortNoticiasEsports();
+    this.data.sortNoticiasDeportes();
   }
 
   getNoticiasDeportes(): void {

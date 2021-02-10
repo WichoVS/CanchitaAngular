@@ -6,11 +6,11 @@
       <div class="perfil-zone container">
         <div class="perfil-opciones container">
           <div class="img-perfil container row">
-            <img src="assets/fakerUserImage.jpg" alt="PerfilFoto" />
+            <img src="{{usuarioLogeadoP.avatar}}" alt="PerfilFoto" />
           </div>
           <div class="perfil-datos container row">
-            <h2>Usuario</h2>
-            <h2>Correo</h2>
+            <h2>{{usuarioLogeadoP.username}}</h2>
+            <h2>{{usuarioLogeadoP.nombre}} {{usuarioLogeadoP.apellido}}</h2>
           </div>
           <div class="perfil-config container row">
             <a href="">Cambiar Nombre de Usuario</a>

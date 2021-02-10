@@ -40,22 +40,20 @@
       </div>
       <div class="Esports-Seccion container row">
         <div class="left container">
-          <a
-            class="noticia-pequeña container"
-            *ngFor="let noticia of NoticiasEsports"
-            href=""
-          >
-            <h1>{{ noticia.titulo }}</h1>
-            <p>{{ noticia.descripcion }}</p>
-          </a>
+          <ng-container *ngFor="let noticia of NoticiasEsports; let i = index">
+            <a class="noticia-pequeña container" href="" *ngIf="i < 5 && i > 0">
+              <h1>{{ noticia.titulo }}</h1>
+              <p>{{ noticia.descripcion }}</p>
+            </a>
+          </ng-container>
         </div>
         <a
           class="right container"
-          style="background: url({{NoticiasEsports[1].imagen}}); background-size: cover;"
+          style="background: url({{NoticiasEsports[0].imagen}}); background-size: cover;"
         >
           <div class="noticia-datos container">
-            <div class="titulo">{{ NoticiasEsports[1].titulo }}</div>
-            <div class="desc">{{ NoticiasEsports[1].descripcion }}</div>
+            <div class="titulo">{{ NoticiasEsports[0].titulo }}</div>
+            <div class="desc">{{ NoticiasEsports[0].descripcion }}</div>
           </div>
         </a>
       </div>

@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Noticia } from 'src/app/core/interfaces/Clases';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-
-  constructor() { }
+  constructor() {}
 
   public NoticiasEsports: Noticia[] = [
     {
@@ -48,7 +47,8 @@ export class DataService {
     {
       id: 1000,
       titulo: 'Liga de Campeones de la CONCACAF',
-      descripcion: 'Cambia su formato en la final, siendo ahora a partido único',
+      descripcion:
+        'Cambia su formato en la final, siendo ahora a partido único',
       imagen: 'assets/CONCACAF.jpg',
       texto: 'owo',
       idUser: 0,
@@ -58,7 +58,8 @@ export class DataService {
     {
       id: 1001,
       titulo: 'Tigres gana su primer partido.',
-      descripcion: 'Los Tigres de México obtuvieron su primera victoria en el Mundial de Clubes.',
+      descripcion:
+        'Los Tigres de México obtuvieron su primera victoria en el Mundial de Clubes.',
       imagen: 'assets/TvU.jpg',
       texto: 'owo',
       idUser: 0,
@@ -68,7 +69,8 @@ export class DataService {
     {
       id: 1002,
       titulo: 'Definidas las semifinales.',
-      descripcion: 'Se definieron los rivales para Palmeiras y el FC Bayern München.',
+      descripcion:
+        'Se definieron los rivales para Palmeiras y el FC Bayern München.',
       imagen: 'assets/Semis.jpg',
       texto: 'owo',
       idUser: 0,
@@ -78,7 +80,8 @@ export class DataService {
     {
       id: 1003,
       titulo: 'Checo Pérez nuevo piloto de Red Bull.',
-      descripcion: 'El piloto mexicano firma con el equipo de Reb Bull para la F1.',
+      descripcion:
+        'El piloto mexicano firma con el equipo de Reb Bull para la F1.',
       imagen: 'assets/ChecoRedBull.jpg',
       texto: 'owo',
       idUser: 0,
@@ -88,7 +91,8 @@ export class DataService {
     {
       id: 1004,
       titulo: 'Rayados pospondrá sus Partidos de Liga MX',
-      descripcion: 'El conjunto Regiomontano obtuvo pruebas de Covid Positivas.',
+      descripcion:
+        'El conjunto Regiomontano obtuvo pruebas de Covid Positivas.',
       imagen: 'assets/rayados.jpg',
       texto: 'owo',
       idUser: 0,
@@ -97,16 +101,24 @@ export class DataService {
     },
   ];
 
-
-
-  getNoticiasDeportes(): Noticia[]{
+  getNoticiasDeportes(): Noticia[] {
     return this.NoticiasDeportes;
   }
 
-  getNoticiasEsports(): Noticia[]{
+  getNoticiasEsports(): Noticia[] {
     return this.NoticiasEsports;
   }
 
-  addNoticiaEsports(){}
-  addNoticiaDeportes(){}
+  addNoticiaEsports() {}
+  addNoticiaDeportes() {}
+
+  sortNoticiasEsports() {
+    debugger;
+    this.NoticiasEsports.sort((a, b) => (a.id < b.id ? 1 : -1));
+  }
+
+  sortNoticiasDeportes() {
+    debugger;
+    this.NoticiasDeportes.sort((a, b) => (a.id < b.id ? 1 : -1));
+  }
 }

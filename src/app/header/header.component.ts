@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { debug } from 'console';
-import {UsersService} from 'src/app/users.service';
+import { UsersService } from 'src/app/users.service';
 import { Users } from '../core/interfaces/Clases';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-
-  usuarioLogeado: Users;
+  usuarioLogeadoH: Users;
   logged = false;
 
-  constructor(private users: UsersService) { }
+  constructor(private users: UsersService) {}
 
   ngOnInit(): void {
     this.getUsuarioLogeado();
-    if(this.usuarioLogeado!=null)
-    {
-      this.logged= true;
+    if (this.usuarioLogeadoH != null) {
+      this.logged = true;
     }
   }
 
-  getUsuarioLogeado(){
-    this.usuarioLogeado = this.users.getUsuarioLoggeado();
+  getUsuarioLogeado() {
+    this.usuarioLogeadoH = this.users.getUsuarioLoggeado();
   }
 
+  setLogout() {
+    this.users.Logout();
+  }
 }

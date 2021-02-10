@@ -57,10 +57,13 @@ export class UsersService {
 
 
   usuarioLogeado: Users;
+  checkLog: string = '0';
 
   getUsuarioLoggeado() {
     debugger;
-    if (this.usuarioLogeado) {
+    this.checkLog = localStorage.getItem('isLog');
+    if (this.checkLog === '1') {
+      this.usuarioLogeado = JSON.parse(localStorage.getItem('userLog'));
       return this.usuarioLogeado;
     }
 
@@ -69,6 +72,8 @@ export class UsersService {
 
   setUsuarioLogeado(userlog: Users) {
     this.usuarioLogeado = userlog;
+    localStorage.setItem('userLog', JSON.stringify(userlog));
+    localStorage.setItem('isLog','1');
   }
 
   checkUsuario(usuario: string, password: string): boolean {
@@ -78,7 +83,7 @@ export class UsersService {
 
     let maxSize = this.usuariosRegistrados.length;
 
-    while (!isUserFind && i <= maxSize) {
+    while (!isUserFind && i < maxSize) {
       if (
         this.usuariosRegistrados[i].username === usuario &&
         this.usuariosRegistrados[i].password === password
@@ -87,10 +92,19 @@ export class UsersService {
         isUserFind = true;
         this.setUsuarioLogeado(this.usuariosRegistrados[indexUser]);
       }
+      else i++;
     }
 
     return isUserFind;
   }
 
   constructor() {}
+
+  Logout(){
+    debugger;
+    localStorage.removeItem('isLog');
+    localStorage.removeItem('userLog')
+  }
+
+
 }
